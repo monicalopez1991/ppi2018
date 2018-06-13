@@ -4,7 +4,8 @@ import Objetos.Docente;
 import Objetos.Estudiante;
 import Objetos.Evaluacion;
 import Objetos.Grupo;
-import java.io.IOException;
+import java.awt.Color;
+import java.awt.Component;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -12,8 +13,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Vector;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -38,7 +40,7 @@ public class dlgListaNotas extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setTitle(grupo.getNombreClase());
-        this.listaDocentes=listaDocentes;
+        this.listaDocentes = listaDocentes;
         this.listaEstudiante = grupo.getListaEstudiantes();
         poblarTablaEstudiantes();
     }
@@ -49,7 +51,7 @@ public class dlgListaNotas extends javax.swing.JDialog {
         initComponents();
         Panel1.setVisible(false);
         setTitle(StrClase);
-        this.listaDocentes=listaDocentes;
+        this.listaDocentes = listaDocentes;
         this.estudiante = estudiante;
         poblarTablaEstudiante();
     }
@@ -435,7 +437,7 @@ public class dlgListaNotas extends javax.swing.JDialog {
 //metodo q pobla la tabla con los estudiamtes de una clase.
     private void poblarTablaEstudiantes() {
         try {
-        archivo.Archivo.guardar(listaDocentes);
+            archivo.Archivo.guardar(listaDocentes);
             ordenarEstudiante();
 
             DefaultTableModel dModeloTabla = (DefaultTableModel) tblestudiante.getModel();
@@ -450,6 +452,8 @@ public class dlgListaNotas extends javax.swing.JDialog {
                 dModeloTabla.addColumn(strTemporal);
             }
             dModeloTabla.addColumn("Definitiva 100%");
+
+            tblestudiante.setDefaultRenderer(Object.class, new EstudiantesTableCellRenderer());
 
             Vector<String> vteTemporal = new Vector<String>();
             // Limpia la tabla cliente
@@ -584,4 +588,27 @@ public class dlgListaNotas extends javax.swing.JDialog {
     private javax.swing.JTable tblestudiante;
     private javax.swing.JTextField txtfiltrar;
     // End of variables declaration//GEN-END:variables
+}
+
+class EstudiantesTableCellRenderer extends DefaultTableCellRenderer {
+
+    
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+
+        if (column >= 2) {
+            Double number = Double.parseDouble(value.toString());
+
+            if (number < 3.0) {
+
+                setForeground(Color.RED);
+               
+            }else{
+                setForeground(Color.BLACK);
+            }
+        }else{
+            setForeground(Color.BLACK);
+        }
+        setText(value.toString());
+        return this;
+    }
 }
