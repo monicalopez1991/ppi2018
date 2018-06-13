@@ -1,0 +1,69 @@
+1
+1$4.5$20.0$seguimiento
+1
+2$3.8$20.0$Parcial
+1
+3$4.8$20.0$Taller
+1
+4$5.0$40.0$Final
+90
+2
+1017203078$jhon_escobar23172@elpoli.edu.co$Jhon Mario Escobar Giraldo
+#
+1
+1$3.5$20.0$seguimiento
+1
+2$5.0$20.0$Parcial
+1
+3$2.8$20.0$Taller
+1
+4$3.1$40.0$Final
+90
+2
+1053810771$monica_lopez23162@elpoli.edu.co$Mónica Natalia López Tamayo
+#
+1
+1$0.0$20.0$seguimiento
+1
+2$0.0$20.0$Parcial
+1
+3$0.0$20.0$Taller
+1
+4$0.0$40.0$Final
+90
+2
+1017203079$jorge@elpoli.edu.co$Jorge Escobar
+#
+3
+Matematicas 1B$Mario de Jesus Escobar
+@
+1
+1$4.5$20.0$seguimiento
+1
+2$3.8$20.0$Parcial
+1
+3$4.8$20.0$Taller
+1
+4$5.0$40.0$Final
+90
+2
+1017203078$jhon_escobar23172@elpoli.edu.co$Jhon Mario Escobar Giraldo
+#
+1
+1$3.5$20.0$seguimiento
+1
+2$5.0$20.0$Parcial
+1
+3$2.8$20.0$Taller
+1
+4$3.1$40.0$Final
+90
+2
+1053810771$monica_lopez23162@elpoli.edu.co$Mónica Natalia López Tamayo
+#
+3
+Matematicas 1A$Mario de Jesus Escobar
+@
+4
+1$m$Mario de Jesus Escobar
+69
