@@ -1,16 +1,4 @@
 1
-1$3.0$20.0$seguimiento
-1
-2$4.0$20.0$Parcial
-1
-3$4.0$20.0$Taller
-1
-4$4.0$40.0$Final
-90
-2
-3456789$dfghjklñ$dfghjk
-#
-1
 1$4.5$20.0$seguimiento
 1
 2$3.8$20.0$Parcial
