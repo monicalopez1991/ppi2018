@@ -341,45 +341,6 @@ public class dlgListaNotas extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_bteliminarActionPerformed
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dlgListaNotas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dlgListaNotas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dlgListaNotas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dlgListaNotas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                dlgListaNotas dialog = new dlgListaNotas(new javax.swing.JDialog(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
 //este metodo filtra y pobla la tabla con el estudiante q tenga en su nombre o id el texto q ingresan en el Textfile del filtrar.
     private void aplicarFiltro(List<Estudiante> listaFiltro) {
@@ -506,7 +467,7 @@ public class dlgListaNotas extends javax.swing.JDialog {
                 dModeloTabla.addColumn(strTemporal);
             }
             dModeloTabla.addColumn("Definitiva 100%");
-
+            tblestudiante.setDefaultRenderer(Object.class, new EstudiantesTableCellRenderer());
             Vector<String> VtrTemporal = new Vector<String>();
             // Limpia la tabla cliente
             dModeloTabla.setRowCount(0);
@@ -594,7 +555,20 @@ class EstudiantesTableCellRenderer extends DefaultTableCellRenderer {
 
     
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-
+        if (isSelected)
+        {
+            setBackground(table.getSelectionBackground());
+            setForeground(table.getSelectionForeground());
+        }else{
+        
+            if(row%2==0){
+                setBackground(Color.white);
+            }else{
+                setBackground(Color.lightGray);
+            }
+        }
+        
+        
         if (column >= 2) {
             Double number = Double.parseDouble(value.toString());
 
